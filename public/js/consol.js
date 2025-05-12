@@ -368,3 +368,55 @@ var database = [
     console.log("email ghayer mawjod");
   }
   
+//   * After the user logs in, display the amount they have in their bank (user's choice) and offer them services:
+//   # Logout:
+//   - If the user chooses this option, they are logged out and offered the option, as at the beginning, to sign up, log in, or change the password.
+  
+//   # Withdraw Money:
+//   - If the user chooses this option, they can withdraw an amount from their bank (not exceeding the available amount).
+  
+//   # Deposit Money:
+//   - If the user chooses this option, they can deposit the desired amount (not exceeding 1000 dirhams).
+  
+//   # Take a Loan:
+//   - If the user chooses this option, they can take a loan up to 20% of what they already have.
+//   - They receive an additional 20%, but lose 10% with each login until reaching the amount of their loan.
+  
+//   # Invest:
+//   - If the user chooses this option, they can invest any amount in the bank.
+//   - Upon the next login, they will receive 20% of their investment each time until reaching 120% (earning 20% on each investment).
+  
+//   # History:
+//   - Ability to view the entire transaction history.
+
+
+
+var email = prompt("dakhal email ");
+var password = prompt("dakhal kalimat ser");
+
+var userEmail = "sim@gmail.com";
+var userPass = "123456";
+var solde = 1000;
+
+if (email === userEmail && password === userPass) {
+  console.log("dakhal rasid ta3ak " + solde + " dh");
+
+  var choix = prompt("bghiti ts7ab flos ah / la");
+
+  if (choix === "ah") {
+    var montant = prompt("ch7al bghiti ");
+    montant = parseFloat(montant);
+
+    if (montant > 0 && montant <= solde) {
+      solde = solde - montant;
+      console.log("ts7ab " + montant + " dh. b9a 3adak " + solde + " dh");
+    } else {
+      console.log("mablagh ghayer sali7);
+    }
+  } else {
+    console.log("madarti walo rasid b9a " + solde + " dh");
+  }
+
+} else {
+  console.log("email aw kalimat ser ghaltin");
+}
